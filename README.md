@@ -53,7 +53,7 @@ This will be initially empty, and the tool will place the results of your analys
 This will contain annotation files required by readDepth, including a list of entrypoints, and information on GC-content and mapability for the read length that you're working with. See the "Annotations" section below.
 - The resulting directory structure will look like this:
 
-    <working directory>
+    working directory/
     +- annotations/
     |  +- gcWinds/
     |  |  +- chr1.gc.gz
