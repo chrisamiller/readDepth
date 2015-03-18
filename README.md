@@ -53,6 +53,7 @@ This will be initially empty, and the tool will place the results of your analys
 This will contain annotation files required by readDepth, including a list of entrypoints, and information on GC-content and mapability for the read length that you're working with. See the "Annotations" section below.
 - The resulting directory structure will look like this:
 
+```
     working directory/
     +- annotations/
     |  +- gcWinds/
@@ -75,6 +76,7 @@ This will contain annotation files required by readDepth, including a list of en
     |  +- chr1.bed
     |  +- chr2.bed
     |  . . .
+```
 
 ### <a name="annotations"></a>Annotations
 Annotations for common read lengths have been pre-computed for reference genomes hg18 and hg19. They can be downloaded and placed into the appropriate spot using the getAnnotations() function. Alternately, they can be manually accessed from the downloads page, copied to the annotations/ directory and untarred.
