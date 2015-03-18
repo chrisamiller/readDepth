@@ -6,7 +6,8 @@ The readDepth package for R can detect copy number aberrations by measuring the 
 
 In contrast to other published methods, readDepth does not require the sequencing of a reference sample, and uses a robust statistical model that accounts for overdispersed data. It includes a method for effectively increasing the resolution obtained from low-coverage experiments by utilizing breakpoint information from paired end sequencing to do positional refinement. It can also be used to infer copy number using reads obtained from bisulfite sequencing experiments.
 
-*Notice* ReadDepth continues to have niche uses, especially on model organisms, but has largely been made obsolete on human data. For unmatched human samples, I now recommend using another method, such as CNVator. For calling somatic CN events from matched tumor/normal pairs, I recommend [copyCat](http://github.com/chrisamiller/copyCat).
+#### Notice 
+ReadDepth continues to have niche uses, especially on model organisms, but has largely been made obsolete on human data. For unmatched human samples, I now recommend using another method, such as CNVator. For calling somatic CN events from matched tumor/normal pairs, I recommend [copyCat](http://github.com/chrisamiller/copyCat).
 
 ## Installation instructions:
 
@@ -31,7 +32,7 @@ If you prefer to build the package by hand, follow these steps:
 
 ## Documentation
 
-### Setup Directories
+#### Directory Setup
 Start by creating a directory to hold all of your data and results. Within it, readDepth requires three sub-directories:
 - reads/
 This will contain all of your mapped reads, in one-based bed format, broken into one file for each chromosome.
@@ -197,7 +198,7 @@ The other thing you should probably do is check the pdfs in your output director
 
 - Can I use readDepth for exome data?
 
-No. This answer explains why. In a nutshell, exome sequencing is heavily biased by the capture process and different probe affinities. A tool like VarScan2? can use a pair of matched arrays (i.e. tumor and normal) processed at the same time to do CN calls from capture data, but with sufficiently less resolution and accuracy. The bottom line is that if you want to do CN-calling, you really need whole-genome sequencing.
+No. [This answer explains why](https://www.biostars.org/p/17820/#17844). In a nutshell, exome sequencing is heavily biased by the capture process and different probe affinities. A tool like VarScan2? can use a pair of matched arrays (i.e. tumor and normal) processed at the same time to do CN calls from capture data, but with sufficiently less resolution and accuracy. The bottom line is that if you want to do CN-calling, you really need whole-genome sequencing.
 
 - May I use readDepth to calculate mouse CNV? How can I download annotation files?
 
