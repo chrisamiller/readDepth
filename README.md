@@ -9,7 +9,14 @@ In contrast to other published methods, readDepth does not require the sequencin
 #### :exclamation: Notice 
 ReadDepth continues to have niche uses, especially on model organisms, but has largely been made obsolete on human data. For unmatched human samples, I now recommend using another method, such as CNVator. For calling somatic CN events from matched tumor/normal pairs, I recommend [copyCat](http://github.com/chrisamiller/copyCat).
 
-## Installation instructions:
+## Contents
+- [Installation](#installation)
+- [Directory Setup](#directory_setup)
+- [Annotations](#annotations)
+- [Parameters](#parameters)
+- [Usage](#usage)
+- [FAQ](#faq)
+## <a name="installation"></a>Installation instructions:
 
     #install a few packages from bioconductor
     source("http://bioconductor.org/biocLite.R")
@@ -30,9 +37,8 @@ If you prefer to build the package by hand, follow these steps:
         R CMD build readDepth
         R CMD INSTALL readDepth_0.9.8.4.tar.gz
 
-## Documentation
 
-#### Directory Setup
+### <a name="directory_setup"></a>Directory Setup
 Start by creating a directory to hold all of your data and results. Within it, readDepth requires three sub-directories:
 - reads/
 This will contain all of your mapped reads, in one-based bed format, broken into one file for each chromosome.
@@ -65,12 +71,12 @@ This will contain annotation files required by readDepth, including a list of en
     |  +- chr2.bed
     |  . . .
 
-### Annotations
+### <a name="annotations"></a>Annotations
 Annotations for common read lengths have been pre-computed for reference genomes hg18 and hg19. They can be downloaded and placed into the appropriate spot using the getAnnotations() function. Alternately, they can be manually accessed from the downloads page, copied to the annotations/ directory and untarred.
 
 Instructions on computing additional annotations for additional read lengths can be found on the Annotations page
 
-### Parameters
+### <a name="parameters"></a>Parameters
 The main analysis directory should also contain a tab-delimited file named "params". In it will be some or all of the following options:
 
     readLength      - the mean read length. (required)
@@ -129,7 +135,7 @@ The main analysis directory should also contain a tab-delimited file named "para
 
 You can also download an [example params file](http://www.example.com/).
 
-### Usage
+### <a name="usage"></a>Usage
 Start R, then run something like the following set of commands:
 
     # load the library
@@ -156,7 +162,7 @@ Start R, then run something like the following set of commands:
     # "rmGaps=FALSE" parameter. If you're using data with very high coverage
     # (say, greater than 10x), consider ad
 
-## FAQs
+## <a name="faq"></a>FAQs
 
 - I have paired end data and would like to refine segment edges based on breakpoints called from my data. How do I generate the breakpoints.dat file referred to in the documentation?
 
