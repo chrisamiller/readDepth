@@ -6,6 +6,9 @@ The readDepth package for R can detect copy number aberrations by measuring the 
 
 In contrast to other published methods, readDepth does not require the sequencing of a reference sample, and uses a robust statistical model that accounts for overdispersed data. It includes a method for effectively increasing the resolution obtained from low-coverage experiments by utilizing breakpoint information from paired end sequencing to do positional refinement. It can also be used to infer copy number using reads obtained from bisulfite sequencing experiments.
 
+For a full description of the method and applications, see:
+Miller, CA, et al. [ReadDepth: A Parallel R Package for Detecting Copy Number Alterations from Short Sequencing Reads](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016327). PLoS One. doi:10.1371/journal.pone.001632
+
 #### :exclamation: Notice 
 ReadDepth continues to have niche uses, especially on model organisms, but has largely been made obsolete on human data. For unmatched human samples, I now recommend using another method, such as CNVator. For calling somatic CN events from matched tumor/normal pairs, I recommend [copyCat](http://github.com/chrisamiller/copyCat).
 
@@ -16,6 +19,7 @@ ReadDepth continues to have niche uses, especially on model organisms, but has l
 - [Parameters](#parameters)
 - [Usage](#usage)
 - [FAQ](#faq)
+
 ## <a name="installation"></a>Installation instructions:
 
     #install a few packages from bioconductor
