@@ -4,7 +4,7 @@
   getAnnotations
 }
 \description{
-  connect to the google code repository and retrieve the 
+  connect to the annotation repository and retrieve the 
   appropriate annotation files
 }
 \usage{
@@ -33,7 +33,7 @@
 
   Instructions for creating your own annotation files for parameter
   sets not listed here are available at: 
-  http://code.google.com/p/readdepth
+  https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/index.html
 }
 \examples{
   #  library(readDepth)

@@ -377,7 +377,7 @@ writeAlts <- function(segs,rdo){
 
 
 ##------------------------------------------------------------
-## Code for pulling down the annotation files from google code
+## Code for pulling down the annotation files 
 ## and sticking them in the right place
 
 getAnnotations <- function(readLength, sex, genome="hg18", bs=FALSE){
@@ -396,23 +396,23 @@ getAnnotations <- function(readLength, sex, genome="hg18", bs=FALSE){
       print(paste("Oops! Couldn't fetch ",url))
       print("Either you specified a read length or genome build that we don't have annotation")
       print("files prepared for, or your network connection isn't working.")
-      print("Check the documentation at http://code.google.com/p/readdepth/ for more information")
+      print("Check the documentation at http://github.com/chrisamiller/readDepth/ for more information")
       return(0)
     }
   }
 
-  entryurl=paste("http://readdepth.googlecode.com/files/entrypoints.",genome,".",sex,sep="")
+  entryurl=paste("https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/entrypoints.",genome,".",sex,sep="")
   entryfile=paste("annotations/entrypoints")    
   
   if(bs){ #bisulfite
-    mapurl = paste("http://readdepth.googlecode.com/files/mapability.bs.readLength",readLength,".",genome,".tar",sep="")
+    mapurl = paste("https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/mapability.bs.readLength",readLength,".",genome,".tar",sep="")
     mapfile = paste("annotations/mapability.bs.readLength",readLength,".",genome,".tar",sep="")
-    gcurl = paste("http://readdepth.googlecode.com/files/gcWinds.bs.readLength",readLength,".",genome,".tar",sep="")
+    gcurl = paste("https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/gcWinds.bs.readLength",readLength,".",genome,".tar",sep="")
     gcfile = paste("annotations/gcWinds.bs.readLength",readLength,".",genome,".tar",sep="")    
   } else { #normal
-    mapurl = paste("http://readdepth.googlecode.com/files/mapability.readLength",readLength,".",genome,".tar",sep="")
+    mapurl = paste("https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/mapability.readLength",readLength,".",genome,".tar",sep="")
     mapfile = paste("annotations/mapability.readLength",readLength,".",genome,".tar",sep="")
-    gcurl = paste("http://readdepth.googlecode.com/files/gcWinds.readLength",readLength,".",genome,".tar",sep="")
+    gcurl = paste("https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/gcWinds.readLength",readLength,".",genome,".tar",sep="")
     gcfile = paste("annotations/gcWinds.readLength",readLength,".",genome,".tar",sep="")    
   }
 

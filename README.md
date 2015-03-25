@@ -79,7 +79,7 @@ This will contain annotation files required by readDepth, including a list of en
 ```
 
 ### <a name="annotations"></a>Annotations
-Annotations for common read lengths have been pre-computed for reference genomes hg18 and hg19. They can be downloaded and placed into the appropriate spot using the getAnnotations() function. Alternately, they can be manually accessed from the downloads page, copied to the annotations/ directory and untarred.
+Annotations for common read lengths have been pre-computed for reference genomes hg18 and hg19. They can be downloaded and placed into the appropriate spot using the getAnnotations() function. Alternately, they can be manually accessed from [the downloads page](https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/index.html), copied to the annotations/ directory and untarred.
 
 Instructions on computing additional annotations for additional read lengths can be found on the Annotations page
 

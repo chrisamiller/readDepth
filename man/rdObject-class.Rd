@@ -16,7 +16,7 @@ Objects can be created by calls of the form \code{new("rdObject")}.
 
 In order to successfully create this class, you'll need to have the
 proper directory structure set up. See the readDepth documentation 
-for details (http://code.google.com/p/readdepth)
+for details (http://github.com/chrisamiller/readDepth)
 
 }
 
