@@ -167,7 +167,24 @@ Start R, then run something like the following set of commands:
     # segment the data using CBS. If you notice artifacts in the output, such
     # as regions of gain that span centromeres, you might try adding the
     # "rmGaps=FALSE" parameter. If you're using data with very high coverage
-    # (say, greater than 10x), consider ad
+    # (say, greater than 10x), consider adding "minWidth=3" (maybe even 4 or 5)
+    # to reduce the number of false positives (at the expense of sensitivity)
+    segs = rd.cnSegments(rdo.mapCor.gcCor)
+    
+    # write all the segments out to the output directory
+    writeSegs(segs)
+    
+    # If you want just the alterations, you can write those out too
+    writeAlts(segs,rdo)
+    
+    #write the window size and CN gain/loss thresholds to the outdir
+    writeThresholds(rdo)
+    
+    # (optional) save an image of your R session so that you can come
+    # back and rerun parts of the analysis without redoing the
+    # whole thing.
+    save.image("output/mysave.Rdata")
+
 
 ## <a name="faq"></a>FAQs
 
