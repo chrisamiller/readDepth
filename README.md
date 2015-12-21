@@ -140,7 +140,7 @@ The main analysis directory should also contain a tab-delimited file named "para
                       directory (optional - default FALSE)
  
 
-You can also download an [example params file](http://www.example.com/).
+You can also download an [example params file](https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/params).
 
 ### <a name="usage"></a>Usage
 Start R, then run something like the following set of commands:
