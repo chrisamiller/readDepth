@@ -249,3 +249,7 @@ Since this is a windowed depth based approached, the breakpoints will not be pre
 - Hi, I want to try readDepth but I only have bam files from the mapping. Does readDepth accepts bam files? If not, how can I convert .bam to .bed? Thanks
 
 samtools view -F 4 myfile.bam | awk 'OFS="\t"{print $3,$4-1,$4}' >myfile.bed
+
+- What is the entrypoints file need to look like?
+The entrypoints file is a tab-delimited file with each chromosome name, it's length, and it's ploidy. An example file for hg19 human male is here:
+https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/entrypoints.hg19.male
