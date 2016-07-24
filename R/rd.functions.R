@@ -142,8 +142,9 @@ chrName <- function(num){
 ##
 bedAnnotationLength <- function(e){
   if(file.exists(e)){
-    a=scan(gzfile(e),what=0,quiet=TRUE)
-    closeAllConnections()
+    f=gzfile(e)
+    a=scan(f,what=0,quiet=TRUE)
+    close(f)
     return(sum((a[seq(2,(length(a)),2)]-a[seq(1,(length(a)-1),2)]+1)))
   }
   return(0)

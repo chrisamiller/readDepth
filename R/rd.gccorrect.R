@@ -15,7 +15,6 @@ rd.gcCorrect <- function(rdo, meth=FALSE, outlierPercentage=0.01){
     rdo@chrs[[i]] = cbind(rdo@chrs[[i]],gcBins[[i]])
   }
   
-  closeAllConnections()
   gc()
 
   #if bisulfite reads, consider methylation before correcting
@@ -308,7 +307,6 @@ loessCorrect <- function(rdo,outlierPercentage=0.01, gcCorrRes=0.001){
     doCorrection(rdo@chrs[[chr]], gcCorrRes, adjustments, chr)
   }
   
-  closeAllConnections() 
   return(adjBins)
 }
 
