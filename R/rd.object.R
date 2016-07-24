@@ -19,7 +19,6 @@ setMethod("initialize", "rdObject",
             verifyFiles(.Object@entrypoints$chr)
             .Object@readInfo=getReadInfo()             
             .Object@binParams=binParams(.Object@params, .Object@entrypoints, .Object@readInfo)
-             closeAllConnections()
             return(.Object)
           })
 }
@@ -196,7 +195,6 @@ addMapability <-function(entrypoints){
       entrypoints[which(entrypoints$chr==tmp[i]),]$mapPerc = tmp[i+1]
     }
     write.table(entrypoints[,c("chr","mapPerc")],file=mapTotalFileName,sep="\t",quote=F,row.names=F,col.names=F)
-    closeAllConnections()	
   }
 
   tmp = scan(mapTotalFileName,what="",quiet=TRUE)
@@ -207,7 +205,6 @@ addMapability <-function(entrypoints){
     }
   }
   
-  closeAllConnections()
   entrypoints$mapPerc= as.numeric(entrypoints$mapPerc)
   return(entrypoints)
 }

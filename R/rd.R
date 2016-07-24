@@ -18,7 +18,6 @@ readDepth <- function(rdo){
     doBinning(rdo@params, rdo@binParams, rdo@entrypoints, rdo@readInfo, chr)
   }
   rdo@chrs = b
-  closeAllConnections()
   gc() #just in case
 
 
