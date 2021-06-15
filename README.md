@@ -11,7 +11,7 @@ For a full description of the method and applications, see:
 Miller, CA, et al. [ReadDepth: A Parallel R Package for Detecting Copy Number Alterations from Short Sequencing Reads](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016327). PLoS One. doi:10.1371/journal.pone.001632
 
 #### :exclamation: Notice 
-ReadDepth continues to have niche uses, especially on model organisms, but has largely been made obsolete on human data. For unmatched human samples, I now recommend using another method, such as CNVator. For calling somatic CN events from matched tumor/normal pairs, I recommend [copyCat](http://github.com/chrisamiller/copyCat).
+ReadDepth continues to have niche uses, especially on model organisms, but has largely been made obsolete on human data. For unmatched human samples, I now recommend using another method, such as CNVkit. For calling somatic CN events from matched tumor/normal pairs, I recommend [copyCat](http://github.com/chrisamiller/copyCat).
 
 ## Contents
 - [Installation](#installation)
@@ -79,7 +79,7 @@ This will contain annotation files required by readDepth, including a list of en
 ```
 
 ### <a name="annotations"></a>Annotations
-Annotations for common read lengths have been pre-computed for reference genomes hg18 and hg19. They can be downloaded and placed into the appropriate spot using the getAnnotations() function. Alternately, they can be manually accessed from [the downloads page](https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/index.html), copied to the annotations/ directory and untarred.
+Annotations for common read lengths have been pre-computed for reference genomes hg18 and hg19. They can be downloaded and placed into the appropriate spot using the getAnnotations() function. Alternately, they can be manually accessed from [the downloads page](https://wustl.app.box.com/s/yimsngan0v1rc4vsa1b3uhe4ek30rlp8), copied to the annotations/ directory and untarred.
 
 Instructions on computing additional annotations for additional read lengths can be found on the Annotations page
 
@@ -140,7 +140,7 @@ The main analysis directory should also contain a tab-delimited file named "para
                       directory (optional - default FALSE)
  
 
-You can also download an [example params file](https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/params).
+You can also download an example params file from the [annotations folder](https://wustl.app.box.com/s/yimsngan0v1rc4vsa1b3uhe4ek30rlp8).
 
 ### <a name="usage"></a>Usage
 Start R, then run something like the following set of commands:
@@ -251,5 +251,4 @@ Since this is a windowed depth based approached, the breakpoints will not be pre
 samtools view -F 4 myfile.bam | awk 'OFS="\t"{print $3,$4-1,$4}' >myfile.bed
 
 - What should the entrypoints file contain?
-The entrypoints file is a tab-delimited file with each chromosome name, it's length, and it's ploidy. An example file for hg19 human male is here:
-https://xfer.genome.wustl.edu/gxfer1/project/cancer-genomics/readDepth/entrypoints.hg19.male
+The entrypoints file is a tab-delimited file with each chromosome name, it's length, and it's ploidy. An example file for hg19 human male is in the [annotations folder](https://wustl.app.box.com/s/yimsngan0v1rc4vsa1b3uhe4ek30rlp8), named `entrypoints.hg19.male`.
